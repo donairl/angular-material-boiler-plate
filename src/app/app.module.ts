@@ -1,3 +1,4 @@
+import { AuthService } from './service/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -38,7 +39,7 @@ import { GlobalLayoutComponent } from './component/global-layout/global-layout.c
     MatToolbarModule,
     MatListModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
