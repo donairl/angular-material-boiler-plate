@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
+import { GlobalLayoutComponent } from './component/global-layout/global-layout.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {MatListModule} from '@angular/material/list';
     AppComponent,
     LoginPageComponent,
     MainPageComponent,
+    GlobalLayoutComponent,
     
   ],
   imports: [
