@@ -12,3 +12,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
     margin-top: 20%;
 }
 
+.mat-drawer-container {
+    height: 100%
+}      
+
+.sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .left-sidenav {
+    padding: 20px;
+  }

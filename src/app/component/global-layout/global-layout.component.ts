@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-global-layout',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GlobalLayoutComponent implements OnInit {
   showFiller = false;
-  constructor() { }
+  isLoggedIn$: Observable<boolean>;  
+  
+  constructor(private authService: AuthService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.isLoggedIn$ = this.authService.isLoggedIn; // {2}
+  }
+
+  onLogout(){
+    this.authService.logout();                      // {3}
   }
 
 }

@@ -1,4 +1,5 @@
-<mat-toolbar>
+<mat-drawer-container class="app-container" autosize>
+<mat-toolbar *ngIf="isLoggedIn$ | async">
     <button mat-icon-button class="icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
@@ -10,9 +11,10 @@
     <button mat-icon-button class="icon" aria-label="Example icon-button with share icon">
       <mat-icon>share</mat-icon>
     </button>
+    <button mat-button (click)="onLogout()" *ngIf="isLoggedIn$ | async">Logout</button>
   </mat-toolbar>
 
-<mat-drawer #drawer class="left-sidenav" mode="side">
+<mat-drawer #drawer class="left-sidenav" mode="side" >
     <mat-nav-list>
 
         <a mat-list-item [routerLink]="'/accounts'"> Accounts </a>
@@ -30,3 +32,7 @@
     Toggle extra text
   </button>
 </mat-drawer>
+<div class="sidenav-content">
+    <router-outlet></router-outlet> 
+</div>
+</mat-drawer-container>
